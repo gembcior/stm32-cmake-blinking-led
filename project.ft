@@ -1,0 +1,11 @@
+_name: stm32-cmake-blinking-led
+_workspace: /home/tgebka/workspace
+_project_template: /home/tgebka/tools/DevEnv/src/fortresstools/templates/project/stm32/blink_project_template.yaml
+_project_type: stm32
+_cubemx: /home/tgebka/tools/STM32/STM32CubeMX/STM32CubeMX
+_cubemx_project: /home/tgebka/tools/STM32/projects/STM32CMakeBlinkingLed/STM32CMakeBlinkingLed.ioc
+_cube: /home/tgebka/tools/STM32/STM32Cube/STM32CubeL4
+_toolchain: /home/tgebka/tools/toolchains
+_chip: stm32l432kc
+_project_directory: /home/tgebka/workspace/stm32-cmake-blinking-led
+_cubemx__directory: /home/tgebka/workspace/stm32-cmake-blinking-led/cubemx
