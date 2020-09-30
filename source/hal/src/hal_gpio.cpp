@@ -115,12 +115,6 @@ GPIO_TypeDef* HalGpio::decodePort(PortType port)
     case PortType::PortC :
       port_t = GPIOC;
       break;
-    case PortType::PortD :
-      port_t = GPIOD;
-      break;
-    case PortType::PortE :
-      port_t = GPIOE;
-      break;
     case PortType::PortH :
       port_t = GPIOH;
       break;

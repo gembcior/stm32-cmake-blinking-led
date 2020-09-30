@@ -22,9 +22,9 @@ add_compile_definitions(${STM32_CHIP})
 add_compile_definitions(${STM32_CHIP_FAMILY})
 
 string(CONCAT C_FLAGS
-  "-mcpu=cortex-m3 "
+  "-mcpu=cortex-m4 "
   "-mfpu=fpv4-sp-d16 "
-  "-mfloat-abi=soft "
+  "-mfloat-abi=hard "
   "-mabi=aapcs "
   "-mthumb "
   "-std=gnu11 "
@@ -44,9 +44,9 @@ string(CONCAT C_FLAGS
 )
 
 string(CONCAT CXX_FLAGS
-  "-mcpu=cortex-m3 "
+  "-mcpu=cortex-m4 "
   "-mfpu=fpv4-sp-d16 "
-  "-mfloat-abi=soft "
+  "-mfloat-abi=hard "
   "-mabi=aapcs "
   "-mthumb "
   "-fno-builtin "
@@ -68,9 +68,9 @@ string(CONCAT CXX_FLAGS
 )
 
 string(CONCAT ASM_FLAGS
-  "-mcpu=cortex-m3 "
+  "-mcpu=cortex-m4 "
   "-mfpu=fpv4-sp-d16 "
-  "-mfloat-abi=soft "
+  "-mfloat-abi=hard "
   "-mabi=aapcs "
   "-mthumb "
   "-x assembler-with-cpp "
@@ -78,9 +78,9 @@ string(CONCAT ASM_FLAGS
 )
 
 string(CONCAT LINKER_FLAGS
-  "-mcpu=cortex-m3 "
+  "-mcpu=cortex-m4 "
   "-mfpu=fpv4-sp-d16 "
-  "-mfloat-abi=soft "
+  "-mfloat-abi=hard "
   "-mabi=aapcs "
   "-mthumb "
   "-Wl,--gc-sections "

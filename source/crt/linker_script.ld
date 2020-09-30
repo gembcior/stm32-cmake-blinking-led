@@ -90,39 +90,39 @@ SECTIONS
   . = ALIGN(8);
   } >FLASH
   .ARM : {
-	. = ALIGN(8);
+  . = ALIGN(8);
     __exidx_start = .;
     *(.ARM.exidx*)
     __exidx_end = .;
-	. = ALIGN(8);
+  . = ALIGN(8);
   } >FLASH
 
   .preinit_array     :
   {
-	. = ALIGN(8);
+  . = ALIGN(8);
     PROVIDE_HIDDEN (__preinit_array_start = .);
     KEEP (*(.preinit_array*))
     PROVIDE_HIDDEN (__preinit_array_end = .);
-	. = ALIGN(8);
+  . = ALIGN(8);
   } >FLASH
   
   .init_array :
   {
-	. = ALIGN(8);
+  . = ALIGN(8);
     PROVIDE_HIDDEN (__init_array_start = .);
     KEEP (*(SORT(.init_array.*)))
     KEEP (*(.init_array*))
     PROVIDE_HIDDEN (__init_array_end = .);
-	. = ALIGN(8);
+  . = ALIGN(8);
   } >FLASH
   .fini_array :
   {
-	. = ALIGN(8);
+  . = ALIGN(8);
     PROVIDE_HIDDEN (__fini_array_start = .);
     KEEP (*(SORT(.fini_array.*)))
     KEEP (*(.fini_array*))
     PROVIDE_HIDDEN (__fini_array_end = .);
-	. = ALIGN(8);
+  . = ALIGN(8);
   } >FLASH
 
   /* used by the startup to initialize data */

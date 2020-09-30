@@ -6,8 +6,7 @@
 
 namespace stm32::hal {
 
-constexpr GpioPin Button  = {.port = PortType::PortC, .pin = PinNumber::Pin13};
-constexpr GpioPin Led     = {.port = PortType::PortA, .pin = PinNumber::Pin5};
+constexpr GpioPin Led     = {.port = PortType::PortB, .pin = PinNumber::Pin3};
 
 } // namespace
 

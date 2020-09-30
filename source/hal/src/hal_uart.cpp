@@ -1,6 +1,6 @@
 #include "cubemx/main.h"
 #include "cubemx/usart.h"
-#include "hal/hal_usart.h"
+#include "hal/hal_uart.h"
 
 namespace stm32::hal {
 

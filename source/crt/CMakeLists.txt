@@ -1,16 +1,13 @@
-cmake_minimum_required(VERSION 3.15)
-
-add_library(crt STATIC)
+add_library(crt INTERFACE)
 
 target_sources(crt
-  PRIVATE
+  INTERFACE
     startup.s
 )
 
 target_link_libraries(crt
-  PUBLIC
+  INTERFACE
     irq
-  PRIVATE
     "-T ${CMAKE_CURRENT_SOURCE_DIR}/linker_script.ld"
 )
 

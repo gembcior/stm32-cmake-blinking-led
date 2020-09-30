@@ -1,7 +1,5 @@
-cmake_minimum_required(VERSION 3.15)
-
 find_package(CMSIS REQUIRED)
-find_package(STM32HAL REQUIRED)
+find_package(STM32HAL REQUIRED gpio uart)
 
 add_library(cubemx STATIC)
 
@@ -9,7 +7,7 @@ target_sources(cubemx
   PRIVATE
     ${CMSIS_SOURCES}
     ${STM32HAL_SOURCES}
-    src/stm32l1xx_hal_msp.c
+    src/stm32l4xx_hal_msp.c
     src/main.c
     src/gpio.c
     src/usart.c

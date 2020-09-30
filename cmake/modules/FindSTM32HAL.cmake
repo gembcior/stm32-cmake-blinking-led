@@ -7,6 +7,7 @@ if(NOT STM32_CHIP)
 endif()
 
 string(SUBSTRING ${STM32_CHIP} 5 2 CHIP_TYPE)
+string(TOLOWER ${CHIP_TYPE} CHIP_TYPE_LOWER)
 
 if(CHIP_TYPE STREQUAL "F0")
 elseif(CHIP_TYPE STREQUAL "F1")
@@ -43,7 +44,7 @@ elseif(CHIP_TYPE STREQUAL "L1")
   )
 
   set(HAL_REQUIRED_COMPONENTS
-    cortex pwr
+    cortex pwr rcc
   )
 
   set(HAL_EX_COMPONENTS
@@ -53,6 +54,27 @@ elseif(CHIP_TYPE STREQUAL "L1")
   SET(HAL_PREFIX stm32l1xx)
 
 elseif(CHIP_TYPE STREQUAL "L4")
+
+  set(HAL_COMPONENTS
+    adc can comp cortex crc cryp dac dcmi dfsdm dma dma2d
+    dsi exti firewall flash flash_ramfunc gfxmmu
+    gpio hash hcd i2c irda iwdg lcd lptim ltdc mmc nand
+    nor opamp ospi pcd pka pssi pwr qspi rcc rng rtc sai
+    sd smartcard smbus spi sram swpmi tim uart usart wwdg
+  )
+
+  set(HAL_REQUIRED_COMPONENTS
+    cortex pwr rcc
+  )
+
+  set(HAL_EX_COMPONENTS
+    adc crc cryp dac dfsdm dma flash hash
+    ltdc mmc opamp pcd pwr rcc rng rtc sai
+    sd smartcard spi tim uart usart
+  )
+
+  SET(HAL_PREFIX stm32l4xx)
+
 endif()
 
 set(HAL_HEADERS
@@ -93,13 +115,13 @@ endforeach()
 list(REMOVE_DUPLICATES HAL_HEADERS)
 list(REMOVE_DUPLICATES HAL_SOURCES)
 
-string(TOLOWER ${CHIP_TYPE} CHIP_TYPE_LOWER)
-
 find_path(STM32HAL_INCLUDE_DIR ${HAL_HEADERS}
   PATH_SUFFIXES include stm32${CHIP_TYPE_LOWER}
   HINTS ${STM32_CUBE}/Drivers/STM32${CHIP_TYPE}xx_HAL_Driver/Inc
   CMAKE_FIND_ROOT_PATH_BOTH
 )
+
+list(APPEND STM32HAL_INCLUDE_DIRS ${STM32HAL_INCLUDE_DIR})
 
 foreach(file ${HAL_SOURCES})
   find_file(HAL_SOURCE ${file}
@@ -113,4 +135,4 @@ endforeach()
 
 include(FindPackageHandleStandardArgs)
 
-find_package_handle_standard_args(STM32HAL DEFAULT_MSG STM32HAL_INCLUDE_DIR STM32HAL_SOURCES)
+find_package_handle_standard_args(STM32HAL DEFAULT_MSG STM32HAL_INCLUDE_DIRS STM32HAL_SOURCES)
