@@ -12,11 +12,7 @@ public:
 
   void setup();
   void transmit(const uint8_t *data, uint16_t size);
-  void transmitIt();
-  void transmitDma(const uint8_t *data, uint16_t size);
   void receive();
-  void receiveIt();
-  void receiveDma();
 
 private:
   UART_HandleTypeDef& m_uart;

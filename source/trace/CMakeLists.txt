@@ -8,8 +8,10 @@ target_sources(trace
 )
 
 target_include_directories(trace
-  PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/inc
-  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src
+  PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}/inc
+  PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
 target_link_libraries(trace

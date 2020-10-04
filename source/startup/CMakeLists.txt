@@ -6,8 +6,10 @@ target_sources(startup
 )
 
 target_include_directories(startup
-  PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/inc
-  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src
+  PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}/inc
+  PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
 target_link_libraries(startup

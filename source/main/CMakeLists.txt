@@ -8,7 +8,9 @@ target_sources(main
 )
 
 target_include_directories(main
-  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src
+  PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/inc
+    ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
 target_link_libraries(main

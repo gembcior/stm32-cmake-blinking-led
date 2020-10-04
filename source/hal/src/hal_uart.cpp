@@ -21,28 +21,7 @@ void HalUsart::transmit(const uint8_t *data, uint16_t size)
 }
 
 
-void HalUsart::transmitIt()
-{
-}
-
-
-void HalUsart::transmitDma(const uint8_t *data, uint16_t size)
-{
-//  HAL_UART_Transmit_DMA(&m_uart, const_cast<uint8_t*>(data), size);
-}
-
-
 void HalUsart::receive()
-{
-}
-
-
-void HalUsart::receiveIt()
-{
-}
-
-
-void HalUsart::receiveDma()
 {
 }
 

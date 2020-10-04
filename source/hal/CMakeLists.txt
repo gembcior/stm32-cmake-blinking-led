@@ -8,8 +8,10 @@ target_sources(hal
 )
 
 target_include_directories(hal
-  PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/inc
-  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src
+  PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}/inc
+  PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
 target_link_libraries(hal

@@ -1,4 +1,4 @@
-#include "main.h"
+#include "main/main.h"
 #include "startup/startup.h"
 #include "hal/hal_gpio.h"
 #include "hal/hal_cpu.h"
