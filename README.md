@@ -1,7 +1,7 @@
 ## STM32 CubeMX + Cmake
 
 ### Introduction
-On GitHub repository [stm32-cmake-blinking-led](https://github.com/gembcior/stm32-cmake-blinking-led) you can find simple example how you can use CMake with C++ for STM32 development.
+On this repository you can find simple example how you can use CMake with C++ for STM32 development.
 The code itself doesn't do anything special, just the led blinks.
 The main purpose of this example is to show how `STMCube` and `STMCubeMX` can be integrated with CMake.
 
@@ -21,7 +21,7 @@ The main purpose of this example is to show how `STMCube` and `STMCubeMX` can be
 
 ### Requirements
 The project is designed base on STM32 Nucleo-32 board with `STM32L432KC` microcontroller. It was developed on Linux based machine. For properly build the project you will need:
- - Linux based machine [^1],
+ - Linux based machine,
  - CMake >= 3.16,
  - [STMCube repository for STM32L4 series](https://github.com/STMicroelectronics/STM32CubeL4),
  - [GNU Arm Embedded Toolchain](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads),
@@ -46,6 +46,8 @@ set(STM32_CHIP "STM32L432xx" CACHE STRING "")
 set(STM32_CHIP_FAMILY "STM32L4" CACHE STRING "")
 set(STM32_CUBE_PROGRAMMER $ENV{HOME}/tools/STM32/STM32CubeProgrammer/bin/STM32_Programmer_CLI CACHE PATH "")
 ```
+
+After some tweaks, there is a chance that this project can also be compiled on Windows based machine.
 
 ### STMCube integration
 
@@ -145,6 +147,3 @@ See [Requirements](#requirements).
 
 ![in_action](https://mywayof.dev/assets/img/stm32_cubemx_with_cmake/in_action.webp)
 
----
-
-[^1]: After some tweaks, there is a chance that this project can also be compiled on Windows based machine.
